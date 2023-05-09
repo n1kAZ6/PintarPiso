@@ -48,10 +48,15 @@ namespace PintarPiso
         {
 
             Pintura pintura = CatalogoPinturas.ListaPintura[tipoPintura];
+            double precio = SuperficiePintar * pintura.PrecioM2;
+            Console.WriteLine("   {0}{1}\t{2}\t{3}\t{4}\t{5}\t\t  {6}",Util.CuadraTexto(nombre,11)
+                                                                      ,Util.CuadraTexto(mPared.ToString(),9)
+                                                                      ,numPuertas
+                                                                      ,numVentanas
+                                                                      , pintura.NombreColor
+                                                                      , pintura.PrecioM2,precio);
 
-            Console.WriteLine("   {0}{1}\t{2}\t{3}\t{4}\t{5}\t\t  {6}",nombre,mPared,numPuertas,numPuertas,numVentanas, pintura.Mostrar());
-
-            return SuperficiePintar * pintura.PrecioM2;
+            return precio;
         }
 
     }	
